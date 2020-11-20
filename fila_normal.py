@@ -1,24 +1,17 @@
-class FilaNormal:
-    codigo:int = 0 # TypeHint: Indica o tipo 
-    fila = []
-    clientesatendidos = []
-    senhaatual:str = ""
+from fila_base import FilaBase
+from constantes import CODIGO_NORMAL
 
-    def gerasenhaatual(self)->None: # TypeHint: Retorno
-        self.senhaatual = f'NM{self.codigo}'
 
-    def resetafila(self)->None:
-        if self.codigo >= 100:
-            self.codigo=0
-        else:
-            self.codigo+=1
+class FilaNormal(FilaBase):
+    def gera_senha_atual(self) -> None:  # TypeHint: Retorno
+        self.senhaatual = f'{CODIGO_NORMAL}{self.codigo}'
 
-    def atualizafila(self)->None:
-        self.resetafila()
-        self.gerasenhaatual()
+    def atualiza_fila(self) -> None:
+        self.reseta_fila()
+        self.gera_senha_atual()
         self.fila.append(self.senhaatual)
 
-    def chamacliente(self, caixa:int)->str:
-        cliente_atual:str = self.fila.pop()
-        self.clientesatendidos.append(cliente_atual)
+    def chama_cliente(self, caixa: int) -> str:
+        cliente_atual: str = self.fila.pop()
+        self.clientes_atendidos.append(cliente_atual)
         return (f'Cliente atual: {cliente_atual}, dirija-se ao caixa: {caixa}')
