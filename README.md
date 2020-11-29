@@ -36,6 +36,8 @@ def funcao_retorna_string(argumento1) -> Union[RETORNO_1, RETORNO_2]:
     estatistica: Dict[str, Union[List[str], str, int]] = {}
 ```
 
+O typing também permite salvar Union's em variáveis!  
+
 ---
 
 ### Mypy
@@ -67,4 +69,9 @@ Para configurar os erros a serem acusados ou ignorados, se cria o arquivo **tox.
 São classes que são como um contrato, a classe mãe cria métodos abstratos e obriga que a classe filha tenha os mesmos métodos. Além de obrigar a usar as mesmas classes obriga também a usar as mesmas variáveis e os mesmos tipos.
 
 ### Método Template
-São métodos presentes na classe mãe que não sibescritos pela classe filha, mas são utilizados por ela.
+São métodos presentes na classe mãe que não sibescritos pela classe filha, mas são utilizados por ela.  
+
+--- 
+
+### Injeção de Dependências  
+É o ato de injetar uma classe em um método, visando melhorar o código.
