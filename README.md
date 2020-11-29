@@ -26,6 +26,16 @@ def funcao_retorna_string(argumento1) -> Union[RETORNO_1, RETORNO_2]:
     return str("Frase")
 ```
 
+Quando se trabalha com Listas e Dicionários, temos que import da biblioteca **typing** o tipo _List_ e _Dict_.  
+Ex:  
+```python
+from typing import Dict, Union, List
+
+
+def funcao_retorna_string(argumento1) -> Union[RETORNO_1, RETORNO_2]:  
+    estatistica: Dict[str, Union[List[str], str, int]] = {}
+```
+
 ---
 
 ### Mypy
